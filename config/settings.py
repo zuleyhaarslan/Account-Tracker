@@ -6,10 +6,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DB_PATH = BASE_DIR / "database" / "tracker.db"
 
 # Security Configuration
-# CRITICAL: In a production setting, this should be an environment variable.
-# For local convenience, we provide a static fallback key here.
 SECRET_KEY = os.getenv("APP_SECRET_KEY", "b3af829d1c02e4839102ca74ef82c91a")
-ENCRYPTION_KEY = os.getenv("DATABASE_ENCRYPTION_KEY", "0123456789abcdef0123456789abcdef") # Must be exactly 32 bytes for AES-256
+ENCRYPTION_KEY = os.getenv("DATABASE_ENCRYPTION_KEY", "0123456789abcdef0123456789abcdef") 
 
 # Core Tracker Control Rules
 BACKGROUND_CHECK_INTERVAL_SECONDS = 300  # Poll platforms every 5 minutes
