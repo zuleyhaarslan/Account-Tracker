@@ -1,0 +1,21 @@
+# === Local Application Data (CRITICAL) ===
+# Never track your actual database file containing encrypted credentials
+database/tracker.db
+database/tracker.db-journal
+
+# Never track serialized browser cookies/session footprints
+database/cookies/
+
+# === Python Environment & Runtime ===
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv
+venv/
+ENV/
+env/
+
+# === Operating System Noise ===
+.DS_Store
+Thumbs.db

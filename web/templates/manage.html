@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="max-width: 600px; margin: 0 auto;">
+    <h2>Add New Tracked Endpoint Target</h2>
+    <form method="POST" action="/accounts/add" style="display: flex; flex-direction: column; gap: 1.2rem; margin-top: 1.5rem; border: 1px solid var(--border); padding: 2rem; border-radius: 6px; background: var(--gray);">
+        <label style="display: flex; flex-direction: column; font-weight: 600; font-size: 0.9rem;">
+            Platform Label / System Target Name
+            <input type="text" name="platform_name" placeholder="e.g., GitHub, Corporate IAM Portal" required style="padding: 0.5rem; border: 1px solid var(--border); border-radius: 4px; margin-top: 0.25rem;">
+        </label>
+        <label style="display: flex; flex-direction: column; font-weight: 600; font-size: 0.9rem;">
+            Exact Update or Notifications URL Page View
+            <input type="url" name="target_url" placeholder="https://example.com/notifications" required style="padding: 0.5rem; border: 1px solid var(--border); border-radius: 4px; margin-top: 0.25rem;">
+        </label>
+        <label style="display: flex; flex-direction: column; font-weight: 600; font-size: 0.9rem;">
+            Target Account Primary Input Identification (Username / Email)
+            <input type="text" name="username" required style="padding: 0.5rem; border: 1px solid var(--border); border-radius: 4px; margin-top: 0.25rem;">
+        </label>
+        <label style="display: flex; flex-direction: column; font-weight: 600; font-size: 0.9rem;">
+            Target Account Secondary Security Key (Password / Passphrase)
+            <input type="password" name="password" required style="padding: 0.5rem; border: 1px solid var(--border); border-radius: 4px; margin-top: 0.25rem;">
+        </label>
+        <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 0.5rem;">
+            <a href="/dashboard" class="btn btn-secondary" style="line-height: 1.4;">Abort Input</a>
+            <button type="submit" class="btn">Register Endpoint Node</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

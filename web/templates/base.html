@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Multi-Account Tracker</title>
+    <style>
+        :root {
+            --blue: #4f8ed1;
+            --yellow: #ffc107;
+            --gray: #f8f9fa;
+            --dark: #212529;
+            --border: #dee2e6;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--dark);
+            background-color: #ffffff;
+        }
+        header {
+            background-color: var(--gray);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 { margin: 0; font-size: 1.4rem; font-weight: 700; }
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            margin-left: 1.5rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+        nav a:hover { color: var(--blue); }
+        .container { padding: 2rem; max-width: 1200px; margin: 0 auto; }
+        .btn {
+            background-color: var(--blue);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        .btn:hover { opacity: 0.9; }
+        .btn-danger { background-color: #dc3545; }
+        .btn-secondary { background-color: #6c757d; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Account Tracking Dashboard</h1>
+        {% if user %}
+        <nav>
+            <a href="/dashboard">Overview Matrix</a>
+            <a href="/manage">Add New Account</a>
+            <a href="/logout" style="color: #dc3545;">Exit Portal</a>
+        </nav>
+        {% endif %}
+    </header>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
